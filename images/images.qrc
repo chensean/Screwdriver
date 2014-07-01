@@ -1,0 +1,46 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>document.png</file>
+        <file>info.png</file>
+        <file>applications-utilities-3.png</file>
+        <file>audio-card.png</file>
+        <file>clear.png</file>
+        <file>close.png</file>
+        <file>dialog-declare.png</file>
+        <file>dialog-error.png</file>
+        <file>dialog-error-2.png</file>
+        <file>dialog-error-3.png</file>
+        <file>dialog-error-4.png</file>
+        <file>dialog-error-5.png</file>
+        <file>dialog-error-7.png</file>
+        <file>dialog-important.png</file>
+        <file>dialog-important-2.png</file>
+        <file>dialog-information-2.png</file>
+        <file>dialog-information-3.png</file>
+        <file>dialog-information-4.png</file>
+        <file>dialog-ok-2.png</file>
+        <file>document-decrypt-3.png</file>
+        <file>document-open-2.png</file>
+        <file>document-save-as-4.png</file>
+        <file>document-send.png</file>
+        <file>download.png</file>
+        <file>flash.png</file>
+        <file>folder-open.png</file>
+        <file>help.png</file>
+        <file>irkick.png</file>
+        <file>kgpg_edit.png</file>
+        <file>mail-attach.png</file>
+        <file>media-playback-start.png</file>
+        <file>preferences-desktop.png</file>
+        <file>preferences-system-3.png</file>
+        <file>record.png</file>
+        <file>refresh.png</file>
+        <file>scope.png</file>
+        <file>signal.png</file>
+        <file>terminal.png</file>
+        <file>user-desktop-2.png</file>
+        <file>view-refresh.png</file>
+        <file>window-close-2.png</file>
+        <file>RTR 128.png</file>
+    </qresource>
+</RCC>

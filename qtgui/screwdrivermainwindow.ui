@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ScrewdriverMainWindow</class>
+ <widget class="QMainWindow" name="ScrewdriverMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1172</width>
+    <height>791</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Screwdriver</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../images/images.qrc">
+    <normaloff>:/images/kgpg_edit.png</normaloff>:/images/kgpg_edit.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="sizeConstraint">
+     <enum>QLayout::SetDefaultConstraint</enum>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="WidgetTaskManage" name="page1"/>
+      <widget class="WidgetTaskCfg" name="page2"/>
+      <widget class="QWidget" name="page3"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1172</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew_Project"/>
+    <addaction name="actionRecent_Projects"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose_Project"/>
+    <addaction name="actionSave_Project"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuProject">
+    <property name="title">
+     <string>Project</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>Window</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>?</string>
+    </property>
+    <addaction name="actionAbout_Screwdriver"/>
+    <addaction name="actionReport_Bugs"/>
+    <addaction name="actionIndex"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+   <addaction name="menuProject"/>
+   <addaction name="menuWindow"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew_Project"/>
+   <addaction name="actionOpen_Project"/>
+   <addaction name="actionSave_Project"/>
+   <addaction name="actionAbout_Screwdriver"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QToolBar" name="modeSwitchToolBar">
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(53, 53, 53, 255), stop:1 rgba(173, 173, 173, 255));
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftToolBarArea</set>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>40</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionTaskMgrMode"/>
+   <addaction name="actionCfgMode"/>
+   <addaction name="actionAnalysisMode"/>
+   <addaction name="actionAcqMode"/>
+   <addaction name="actionPlaybackMode"/>
+  </widget>
+  <action name="actionNew_Project">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/images/folder-open.png</normaloff>:/images/folder-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen_Project">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/images/document-open-2.png</normaloff>:/images/document-open-2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionRecent_Projects">
+   <property name="text">
+    <string>Recent Projects</string>
+   </property>
+  </action>
+  <action name="actionClose_Project">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/images/window-close-2.png</normaloff>:/images/window-close-2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close Project</string>
+   </property>
+  </action>
+  <action name="actionSave_Project">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/images/download.png</normaloff>:/images/download.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionAbout_Screwdriver">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/images/dialog-information-4.png</normaloff>:/images/dialog-information-4.png</iconset>
+   </property>
+   <property name="text">
+    <string>About Screwdriver</string>
+   </property>
+  </action>
+  <action name="actionReport_Bugs">
+   <property name="text">
+    <string>Report Bug..</string>
+   </property>
+  </action>
+  <action name="actionIndex">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/images/info.png</normaloff>:/images/info.png</iconset>
+   </property>
+   <property name="text">
+    <string>Index</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionTaskMgrMode">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/images/dialog-information-4.png</normaloff>:/images/dialog-information-4.png</iconset>
+   </property>
+   <property name="text">
+    <string>Task Manager</string>
+   </property>
+   <property name="toolTip">
+    <string>Task Manager</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::TextHeuristicRole</enum>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionCfgMode">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/images/audio-card.png</normaloff>:/images/audio-card.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configuration</string>
+   </property>
+   <property name="toolTip">
+    <string>Configuration</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionAnalysisMode">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/images/preferences-desktop.png</normaloff>:/images/preferences-desktop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Analysis</string>
+   </property>
+   <property name="toolTip">
+    <string>Analysis</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionAcqMode">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/images/applications-utilities-3.png</normaloff>:/images/applications-utilities-3.png</iconset>
+   </property>
+   <property name="text">
+    <string>Acquisiation</string>
+   </property>
+   <property name="toolTip">
+    <string>Acquisiation</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionPlaybackMode">
+   <property name="icon">
+    <iconset resource="../images/images.qrc">
+     <normaloff>:/images/view-refresh.png</normaloff>:/images/view-refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Playback</string>
+   </property>
+   <property name="toolTip">
+    <string>Playback</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>8</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>WidgetTaskManage</class>
+   <extends>QWidget</extends>
+   <header>widgettaskmanage.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WidgetTaskCfg</class>
+   <extends>QWidget</extends>
+   <header>widgettaskcfg.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../images/images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
